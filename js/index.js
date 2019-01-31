@@ -6,6 +6,8 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "nav-item-7": "Bananas",
+    "nav-item-8": "Oranges",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -46,13 +48,28 @@ let middle = document.getElementById("middle-img");
 middle.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 //NAV
+const nav =document.querySelector("nav");
+console.log(nav);
+
+const banana = document.createElement('a')
+
+banana.setAttribute('href', '#');
+
+const orange = document.createElement('a')
+
+orange.setAttribute('href', '#');
+
+
+nav.appendChild(banana);
+nav.prepend(orange);
 let navItems = document.querySelectorAll("a");
 console.log(navItems);
 // navItems[0].textContent = siteContent.nav["nav-item-1"];
 for (let index = 0; index < navItems.length; index++) {
   navItems[index].textContent = siteContent.nav[`nav-item-${index+1}`];
-  
+  navItems[index].style.color = "#0ACF1E";
 }
+
 //CTA
 let h1 = document.querySelector("h1");
 h1.innerHTML = siteContent.cta.h1;
