@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br> Is<br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br> Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -37,9 +37,6 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -53,16 +50,41 @@ let navItems = document.querySelectorAll("a");
 console.log(navItems);
 // navItems[0].textContent = siteContent.nav["nav-item-1"];
 for (let index = 0; index < navItems.length; index++) {
-  navItems[index].textContent = siteContent.nav[`nav-item-${index}`];
+  navItems[index].textContent = siteContent.nav[`nav-item-${index+1}`];
   
 }
 //CTA
 let h1 = document.querySelector("h1");
-h1.textContent = siteContent.cta.h1;
+h1.innerHTML = siteContent.cta.h1;
 console.log(h1);
+let button = document.querySelector("button");
+button.textContent = siteContent.cta.button;
+console.log(button);
 
-//MAIN-CONTENT
 
-//CONTACT
+//h4 party
+let h4Array = document.querySelectorAll("h4");
+console.log(h4Array);
 
-//FOOTER
+h4Array[0].textContent = siteContent["main-content"]["features-h4"];
+h4Array[1].textContent = siteContent["main-content"]["services-h4"];
+h4Array[2].textContent = siteContent["main-content"]["about-h4"];
+h4Array[3].textContent = siteContent["main-content"]["product-h4"];
+h4Array[4].textContent = siteContent["main-content"]["vision-h4"];
+h4Array[5].textContent = siteContent["contact"]["contact-h4"];
+//paragraphs
+let paragraphs = document.querySelectorAll("p");
+console.log(paragraphs);
+console.log(paragraphs.length);
+//main paragraphs
+paragraphs[0].textContent = siteContent["main-content"]["features-content"];
+paragraphs[1].textContent = siteContent["main-content"]["services-content"];
+paragraphs[2].textContent = siteContent["main-content"]["about-content"];
+paragraphs[3].textContent = siteContent["main-content"]["product-content"];
+paragraphs[4].textContent = siteContent["main-content"]["vision-content"];
+//contact paragraphs
+paragraphs[5].innerHTML = siteContent["contact"]["address"];
+paragraphs[6].textContent = siteContent["contact"]["phone"];
+paragraphs[7].textContent = siteContent["contact"]["email"];
+//footer
+paragraphs[8].textContent = siteContent["footer"]["copyright"];
