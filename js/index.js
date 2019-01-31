@@ -49,7 +49,7 @@ middle.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 //NAV
 const nav =document.querySelector("nav");
-console.log(nav);
+
 
 const banana = document.createElement('a')
 
@@ -63,7 +63,7 @@ orange.setAttribute('href', '#');
 nav.appendChild(banana);
 nav.prepend(orange);
 let navItems = document.querySelectorAll("a");
-console.log(navItems);
+
 // navItems[0].textContent = siteContent.nav["nav-item-1"];
 for (let index = 0; index < navItems.length; index++) {
   navItems[index].textContent = siteContent.nav[`nav-item-${index+1}`];
@@ -73,15 +73,15 @@ for (let index = 0; index < navItems.length; index++) {
 //CTA
 let h1 = document.querySelector("h1");
 h1.innerHTML = siteContent.cta.h1;
-console.log(h1);
+
 let button = document.querySelector("button");
 button.textContent = siteContent.cta.button;
-console.log(button);
+
 
 
 //h4 party
 let h4Array = document.querySelectorAll("h4");
-console.log(h4Array);
+
 
 h4Array[0].textContent = siteContent["main-content"]["features-h4"];
 h4Array[1].textContent = siteContent["main-content"]["services-h4"];
@@ -91,8 +91,7 @@ h4Array[4].textContent = siteContent["main-content"]["vision-h4"];
 h4Array[5].textContent = siteContent["contact"]["contact-h4"];
 //paragraphs
 let paragraphs = document.querySelectorAll("p");
-console.log(paragraphs);
-console.log(paragraphs.length);
+
 //main paragraphs
 paragraphs[0].textContent = siteContent["main-content"]["features-content"];
 paragraphs[1].textContent = siteContent["main-content"]["services-content"];
